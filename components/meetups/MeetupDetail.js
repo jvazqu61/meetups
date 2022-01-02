@@ -1,4 +1,3 @@
-import {Fragment} from 'react';
 import styles from './MeetupDetail.module.css';
 
 function MeetupDetail(props) {
@@ -9,6 +8,7 @@ function MeetupDetail(props) {
                 alt={props.title}
             />
             <h1>{props.title}</h1>
+            <p>{props.description}</p>
             
         </section>
     )

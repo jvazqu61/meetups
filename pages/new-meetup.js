@@ -1,5 +1,6 @@
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 import { useRouter } from 'next/router';
+import MyHead from '../components/layout/MyHead';
 
 function NewMeetup() {
     const router = useRouter();
@@ -12,12 +13,17 @@ function NewMeetup() {
                 'Content-Type': 'application/json'
             }
         });
-        router.push('/');
+        router.push('/'); // redirect to homepage once new meetup is added
     }
 
     return (
-        <NewMeetupForm  onAddMeetup={addMeetupHandler} />
-            
+        <>
+            <MyHead 
+                title="Add new meetup"
+                description="start a new meetup by creating one!"
+            />
+            <NewMeetupForm  onAddMeetup={addMeetupHandler} />
+        </> 
      
     );
 }
